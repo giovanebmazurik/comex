@@ -6,6 +6,6 @@ import br.com.alura.comex.categoria.model.Categoria;
 public class CategoriaMapper {
 
     public static Categoria toEntity(CategoriaInputDto categoriaInputDto){
-        return new Categoria(categoriaInputDto.nome());
+        return new Categoria(categoriaInputDto.getNome());
     }
 }

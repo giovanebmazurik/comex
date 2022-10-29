@@ -2,9 +2,23 @@ package br.com.alura.comex.categoria.dto;
 
 import javax.validation.constraints.Size;
 
-public record CategoriaInputDto(String nome) {
+public class CategoriaInputDto {
 
-    public CategoriaInputDto(@Size(min = 2) String nome) {
+    @Size(min = 2)
+    private String nome;
+
+    public CategoriaInputDto() {
+    }
+
+    public CategoriaInputDto(String nome) {
+        this.nome = nome;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
         this.nome = nome;
     }
 }
