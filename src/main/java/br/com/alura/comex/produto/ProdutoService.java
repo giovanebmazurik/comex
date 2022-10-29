@@ -1,18 +1,21 @@
 package br.com.alura.comex.produto;
 
 import br.com.alura.comex.categoria.CategoriaRepository;
-import br.com.alura.comex.categoria.dto.CategoriaInputDto;
-import br.com.alura.comex.categoria.mapper.CategoriaMapper;
 import br.com.alura.comex.categoria.model.Categoria;
 import br.com.alura.comex.produto.dto.ProdutoInputDto;
+import br.com.alura.comex.produto.dto.ProdutoOutputDto;
 import br.com.alura.comex.produto.mapper.ProdutoMapper;
 import br.com.alura.comex.produto.model.Produto;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import java.net.URI;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -43,5 +46,10 @@ public class ProdutoService {
 
     private Optional<Categoria> validateAndReturnCategoria(Long idCategoria) {
         return categoriaRepository.findById(idCategoria);
+    }
+
+    public List<ProdutoOutputDto> getAll(Integer page) {
+        Pageable pageable = PageRequest.of(page, 5, Sort.by(Sort.Direction.ASC, "nome"));
+        return produtoRepository.findAll(pageable).stream().map(ProdutoMapper::toOutputDto).toList();
     }
 }
