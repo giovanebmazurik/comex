@@ -1,5 +1,7 @@
 package br.com.alura.comex.model;
 
+import br.com.alura.comex.produto.model.Produto;
+
 import javax.persistence.*;
 import java.math.BigDecimal;
 
