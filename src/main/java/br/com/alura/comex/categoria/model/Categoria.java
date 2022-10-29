@@ -1,4 +1,7 @@
-package br.com.alura.comex.model;
+package br.com.alura.comex.categoria.model;
+
+import br.com.alura.comex.model.Produto;
+import br.com.alura.comex.model.StatusCategoria;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -22,6 +25,10 @@ public class Categoria {
     private List<Produto> produtos = new ArrayList<>();
 
     public Categoria() {
+    }
+
+    public Categoria(String nome) {
+        this.nome = nome;
     }
 
     public Long getId() {
