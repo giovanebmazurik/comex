@@ -1,4 +1,4 @@
-package br.com.alura.comex.model;
+package br.com.alura.comex.pedido.model;
 
 import br.com.alura.comex.produto.model.Produto;
 

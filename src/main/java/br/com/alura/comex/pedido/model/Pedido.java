@@ -1,4 +1,6 @@
-package br.com.alura.comex.model;
+package br.com.alura.comex.pedido.model;
+
+import br.com.alura.comex.cliente.model.Cliente;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;

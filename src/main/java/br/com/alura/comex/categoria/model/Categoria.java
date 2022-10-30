@@ -1,7 +1,6 @@
 package br.com.alura.comex.categoria.model;
 
 import br.com.alura.comex.produto.model.Produto;
-import br.com.alura.comex.model.StatusCategoria;
 
 import javax.persistence.*;
 import java.util.ArrayList;
