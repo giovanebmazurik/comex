@@ -35,7 +35,6 @@ public class ItemDePedido {
     }
 
     public ItemDePedido(Integer quantidade, Produto produto) {
-        ;
         this.quantidade = quantidade;
         this.produto = produto;
         this.precoUnitario = produto.getPrecoUnitario();
@@ -83,5 +82,29 @@ public class ItemDePedido {
 
     public void setTipoDesconto(TipoDescontoItem tipoDesconto) {
         this.tipoDesconto = tipoDesconto;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setPrecoUnitario(BigDecimal precoUnitario) {
+        this.precoUnitario = precoUnitario;
+    }
+
+    public void setQuantidade(Integer quantidade) {
+        this.quantidade = quantidade;
+    }
+
+    public Pedido getPedido() {
+        return pedido;
+    }
+
+    public Produto getProduto() {
+        return produto;
+    }
+
+    public void setProduto(Produto produto) {
+        this.produto = produto;
     }
 }
