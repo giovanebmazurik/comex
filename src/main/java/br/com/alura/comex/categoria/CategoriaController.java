@@ -2,8 +2,6 @@ package br.com.alura.comex.categoria;
 
 import br.com.alura.comex.categoria.dto.CategoriaInputDto;
 import br.com.alura.comex.categoria.dto.CategoriaRelatorioOutputDto;
-import br.com.alura.comex.pedido.dto.PedidoOutputDto;
-import br.com.alura.comex.produto.dto.ProdutoOutputDto;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.GetMapping;
