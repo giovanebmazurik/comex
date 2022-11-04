@@ -8,6 +8,8 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -54,10 +56,10 @@ public class CategoriaController {
                     content = @Content)
     })
     @GetMapping("/pedidos")
+    @Cacheable(value = "relatorioPedidos")
     public List<CategoriaRelatorioOutputDto> lista(){
         return categoriaService.getPedidos();
     }
 
-
-
 }
+
