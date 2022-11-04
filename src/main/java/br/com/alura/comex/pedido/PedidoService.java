@@ -8,7 +8,6 @@ import br.com.alura.comex.pedido.mapper.PedidoMapper;
 import br.com.alura.comex.pedido.model.Pedido;
 import br.com.alura.comex.produto.ProdutoRepository;
 import br.com.alura.comex.produto.model.Produto;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.util.UriComponentsBuilder;
@@ -19,17 +18,23 @@ import java.util.Optional;
 @Service
 public class PedidoService {
 
-    @Autowired
-    private PedidoRepository pedidoRepository;
+    private final PedidoRepository pedidoRepository;
 
-    @Autowired
-    private ClienteRepository clienteRepository;
+    private final ClienteRepository clienteRepository;
 
-    @Autowired
-    private ProdutoRepository produtoRepository;
+    private final ProdutoRepository produtoRepository;
 
-    @Autowired
-    private  ItemDePedidoRepository itemDePedidoRepository;
+    private final ItemDePedidoRepository itemDePedidoRepository;
+
+    public PedidoService(PedidoRepository pedidoRepository,
+                         ClienteRepository clienteRepository,
+                         ProdutoRepository produtoRepository,
+                         ItemDePedidoRepository itemDePedidoRepository) {
+        this.pedidoRepository = pedidoRepository;
+        this.clienteRepository = clienteRepository;
+        this.produtoRepository = produtoRepository;
+        this.itemDePedidoRepository = itemDePedidoRepository;
+    }
 
     public ResponseEntity<Long> create(PedidoInputDto pedidoInputDto, UriComponentsBuilder uriBuilder){
 

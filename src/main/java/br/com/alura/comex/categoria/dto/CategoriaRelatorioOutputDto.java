@@ -1,11 +1,16 @@
 package br.com.alura.comex.categoria.dto;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+
 import java.math.BigDecimal;
 
 public class CategoriaRelatorioOutputDto {
 
+    @Schema(description = "${categoria.output.dto.name}")
     private String nomeCategoria;
+    @Schema(description = "${categoria.output.dto.qtd}")
     private Integer quantidadeVendas;
+    @Schema(description = "${categoria.output.dto.value}")
     private BigDecimal valorTotal;
 
     public CategoriaRelatorioOutputDto() {

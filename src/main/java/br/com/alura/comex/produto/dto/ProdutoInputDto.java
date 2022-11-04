@@ -1,5 +1,7 @@
 package br.com.alura.comex.produto.dto;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+
 import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
@@ -9,16 +11,24 @@ import java.math.BigDecimal;
 
 public class ProdutoInputDto {
 
+    @Schema(description = "${product.input.dto.name}")
     @NotNull
     @NotEmpty
     @Size(min = 2)
     private String nome;
+
+    @Schema(description = "${product.input.dto.desc}")
     private String descricao;
+
+    @Schema(description = "${product.input.dto.value}")
     @NotNull
     @Min(0)
     private BigDecimal preco;
+    @Schema(description = "${product.input.dto.qtd}")
     @NotNull
     private Integer quantidade;
+
+    @Schema(description = "${product.input.dto.id.categoria}")
     @NotNull
     private Long idCategoria;
 

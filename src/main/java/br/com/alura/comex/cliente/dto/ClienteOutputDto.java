@@ -1,10 +1,16 @@
 package br.com.alura.comex.cliente.dto;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+
 public class ClienteOutputDto {
 
+    @Schema(description = "${cliente.output.dto.name}")
     private String nome;
+    @Schema(description = "${cliente.output.dto.cpf}")
     private String cpf;
+    @Schema(description = "${cliente.output.dto.telefone}")
     private String telefone;
+    @Schema(description = "${cliente.output.dto.local}")
     private String local;
 
     public ClienteOutputDto() {
